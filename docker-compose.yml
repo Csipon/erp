@@ -1,0 +1,20 @@
+version: '2'
+
+services:
+#  web:
+#    build: .
+#    image: csipon/erp
+#    container_name: erp
+#    ports:
+#      - 8080:8080
+#    working_dir: /
+#    depends_on:
+#      - mongo
+
+  mongo:
+    image: mongo:3.2.4
+    ports:
+    - 27017:27017
+    command: --smallfiles
+    environment:
+      - MONGOCLIENT_DEFAULT_CONNECTION_URL=mongodb://localhost:27017

@@ -1,0 +1,16 @@
+#---Profile Properties---
+#Available profiles: local, remote, docker
+#Set remote when deploy to server
+spring:
+  profiles:
+    active: local
+##---Loggin Properties---
+logging:
+  level:
+    org.springframework.web: INFO
+    org.springframework.social: DEBUG
+    org.springframework.security: INFO
+    org.springframework.batch: DEBUG
+    org.springframework.web.servlet.mvc.method.annotation: ERROR
+    org.springframework.boot.actuate.endpoint.mvc: ERROR
+    com.bobbbaich: DEBUG

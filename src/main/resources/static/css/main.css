@@ -1,0 +1,269 @@
+::-webkit-scrollbar
+{
+    width: 10px;  /* for vertical scrollbars */
+    height: 10px; /* for horizontal scrollbars */
+}
+
+::-webkit-scrollbar-track
+{
+    background: rgba(0, 0, 0, 0.1);
+}
+
+::-webkit-scrollbar-thumb
+{
+    background: rgba(5, 62, 55, 0.5);
+}
+
+body {
+    position: relative;
+    background-color: #f2f2f2;
+}
+
+/****** menu ******/
+
+header {
+    position: fixed;
+    z-index: 999;
+    width: 100%;
+}
+
+nav {
+    height: 64px;
+}
+
+nav .button-collapse i {
+    line-height: 65px;
+}
+
+.menu-left {
+    float: left;
+}
+
+.menu-left-item {
+    float: left;
+}
+
+.menu-left a {
+    margin-left: 30px;
+    margin-right: 30px;
+}
+
+.menu-block {
+    width: 220px;
+    transition: width 1s;
+    height: 1px;
+}
+
+.menu-block.hide-menu-block {
+    width: 60px;
+}
+
+.new-message {
+position: relative;
+}
+
+.new-message:before {
+content: attr(data-new-message);
+color: #f44336;
+position: absolute;
+display: block;
+left: 15px;
+top: 20px;
+}
+
+.new-message i {
+color: blue;
+}
+
+.button-collapse {
+    margin-left: 50px;
+}
+
+.menu-right {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    height: 100%;
+}
+
+.nav-wrapper .menu-right li a {
+    font-weight: 500;
+    color: #000;
+}
+
+.menu-item-user .dropdown-button {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.menu-item-user .dropdown-button img {
+    height: 40px;
+    width: 40px;
+    margin-right: 10px;
+}
+
+#dropdown-user a {
+    display: flex;
+}
+
+#dropdown-user i {
+    display: inline;
+    margin: 0 14px 0 0;
+}
+
+.menu-item-user {
+    margin-right: 50px;
+    min-width: 170px;
+}
+
+/****** nav ******/
+
+#slide-out {
+    width: 220px;
+    transition: width 1s;
+    background-color: #00695c !important;
+}
+
+#slide-out.mini-nav {
+    width: 60px !important;
+}
+
+#slide-out.mini-nav li i {
+    font-size: 30px;
+}
+
+#slide-out li:first-child {
+    margin-top: 10px;
+}
+
+#slide-out li:first-child i {
+    font-size: 30px;
+}
+
+.side-nav-wrapper .side-nav li a:not([class="li-divider"]) {
+    padding-left: 15px;
+}
+
+.logo, .side-nav-wrapper a {
+    min-width: 220px;
+}
+
+.logo h1 {
+    min-width: 220px;
+    display: inline;
+    font-size: 28px;
+    color: #fff;
+    font-weight: 300;
+    line-height: 48px;
+}
+
+.side-nav-wrapper .divider {
+    background-color: #fff;
+    margin: 10px;
+}
+
+.side-nav-wrapper .side-nav li>a>i {
+    margin-right: 20px;
+}
+
+.side-nav-wrapper li i {
+    margin-right: 20px;
+    font-size: 22px;
+    transition: font-size 1s;
+}
+
+.side-nav-wrapper li h2 {
+    display: inline;
+    font-size: 20px;
+    color: #fff;
+    font-weight: 300;
+}
+
+
+/****** content ******/
+
+#current-page {
+    float: left;
+    font-size: 22px;
+    margin-top: 21px;
+    margin-bottom: 0;
+    color: #424242;
+    font-weight: 500;
+}
+
+.content {
+    width: calc(100% - 220px);
+    float: right;
+    min-height: 600px;
+    margin-top: 64px;
+    transition: width 1s;
+}
+
+.content.full-content {
+    width: calc(100% - 60px);
+}
+
+.progress {
+    margin: 0;
+    background-color: rgba(172, 236, 230, 0.5);
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s, opacity 0.5s linear;
+}
+
+.progress.progress-active {
+    visibility: visible;
+    opacity: 1;
+}
+
+.content-body-wrapper {
+    transition: margin-top 0.5s, opacity 0.5s linear;
+    margin-top: 50px;
+    opacity: 0;
+}
+
+.content-body-wrapper.content-body-visible {
+    margin-top: 0;
+    opacity: 1;
+}
+
+.content-body {
+    width: calc(100% - 20px * 2);
+    margin: 20px;
+    background-color: #fff;
+}
+
+.tabs .tab a {
+    color: rgba(78, 185, 239, 0.75);
+}
+
+.tabs .tab a:hover, .tabs .tab a.active {
+    color: #4eb9ed;
+}
+
+.tabs .indicator {
+    background-color: #4eb9ed;
+}
+
+.autocomplete-content.dropdown-content {
+    max-height: 200px;
+    position: absolute;
+}
+
+.input-field label i.deleter {
+    cursor: pointer;
+    margin-left: 5px;
+}
+
+/****** @media ******/
+
+@media (max-width: 992px) {
+    .button-collapse {
+        margin-left: 0;
+    }
+
+    .content {
+        width: 100%;
+    }
+}
