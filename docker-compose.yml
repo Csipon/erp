@@ -17,4 +17,4 @@ services:
     - 27017:27017
     command: --smallfiles
     environment:
-      - MONGOCLIENT_DEFAULT_CONNECTION_URL=mongodb://localhost:27017
+      - MONGOCLIENT_DEFAULT_CONNECTION_URL=mongodb://mongod:27017

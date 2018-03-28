@@ -8,9 +8,11 @@ import com.csipon.erp.service.api.UserService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+@Service
 @RequiredArgsConstructor
 @Slf4j
 public class UserServiceImpl implements UserService {
@@ -37,7 +39,7 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public List<User> getUsersByRoleId(String roleId) {
-        return userRepository.findUsersByRole(roleId);
+        return userRepository.findUsersByRoleId(roleId);
     }
 
     @Override

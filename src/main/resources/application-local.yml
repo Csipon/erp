@@ -1,6 +1,6 @@
 #LOCAL profile configuration
 spring:
   data:
-      mongodb:
-        uri: mongodb://localhost:27017
-        database: spring
+      mongodb.host: localhost
+      mongodb.port: 27017
+      mongodb.uri: mongodb://localhost/erp
