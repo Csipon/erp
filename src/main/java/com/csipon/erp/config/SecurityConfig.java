@@ -40,23 +40,24 @@ public class SecurityConfig
                 .httpBasic()
                 .and()
                 .formLogin()
-                .loginProcessingUrl("/login").permitAll()
+                .loginPage("/login").permitAll()
                 .failureUrl("/login?error")
                 .usernameParameter("login").passwordParameter("password")
                 .successForwardUrl("/home")
                 .permitAll()
                 .and()
                 .logout().logoutSuccessUrl("/login?logout").deleteCookies("JSESSIONID")
-//                .and()
-//                .csrf()
+                .and()
+                .csrf()
                 .and()
                 .rememberMe().tokenRepository(tokenRepository)
                 .tokenValiditySeconds(1209600);
+//        http.csrf().disable();
     }
 
     @Bean
     public PasswordEncoder passwordEncoder() {
-//        return new BCryptPasswordEncoder();
-        return PasswordEncoderFactories.createDelegatingPasswordEncoder();
+        return new BCryptPasswordEncoder();
+//        return PasswordEncoderFactories.createDelegatingPasswordEncoder();
     }
 }

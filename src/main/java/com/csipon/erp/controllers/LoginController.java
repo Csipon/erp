@@ -12,15 +12,15 @@ import javax.servlet.http.HttpServletRequest;
 @Controller
 public class LoginController {
 
-    @GetMapping(value = "/login")
-    public String login(@RequestParam(value = "logout", required = false) String logout,
-                        HttpServletRequest request, Model model) throws Throwable {
-//        if (logout != null) {
-//            model.addAttribute("msg", "You've been logged out successfully.");
-//        }else if (request.getSession().getAttribute("SPRING_SECURITY_LAST_EXCEPTION") != null){
-//            throw (Throwable) request.getSession().getAttribute("SPRING_SECURITY_LAST_EXCEPTION");
-//        }
-        return "login";
-    }
+//    @GetMapping(value = "/login")
+//    public String login(@RequestParam(value = "logout", required = false) String logout,
+//                        HttpServletRequest request, Model model) throws Throwable {
+////        if (logout != null) {
+////            model.addAttribute("msg", "You've been logged out successfully.");
+////        }else if (request.getSession().getAttribute("SPRING_SECURITY_LAST_EXCEPTION") != null){
+////            throw (Throwable) request.getSession().getAttribute("SPRING_SECURITY_LAST_EXCEPTION");
+////        }
+//        return "login";
+//    }
 
 }
