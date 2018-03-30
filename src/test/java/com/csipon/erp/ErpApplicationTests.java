@@ -2,8 +2,6 @@ package com.csipon.erp;
 
 import com.csipon.erp.data.RoleRepository;
 import com.csipon.erp.data.UserRepository;
-import com.csipon.erp.models.Role;
-import com.csipon.erp.models.User;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;

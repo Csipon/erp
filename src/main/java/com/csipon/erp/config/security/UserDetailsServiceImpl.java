@@ -23,13 +23,13 @@ public class UserDetailsServiceImpl implements UserDetailsService {
     @Override
     public UserDetails loadUserByUsername(String login) throws UsernameNotFoundException {
         User user = userRepository.findUserByLogin(login);
-        if (null == user) {
+        if (user == null) {
             throw new UsernameNotFoundException("No user present with login : " + login);
         } else {
             Role role = user.getRole();
             List<String> userRoles = new ArrayList<>();
             userRoles.add(role.getRole());
-            log.info("User successful find with login  : " + login);
+            log.info("User found successfully with login  : " + login);
             return new UserDetailsImpl(user, userRoles);
         }
     }

@@ -11,7 +11,6 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.http.HttpStatus;
-import org.springframework.lang.NonNull;
 import org.springframework.lang.Nullable;
 import org.springframework.stereotype.Component;
 import org.springframework.validation.Errors;
@@ -38,7 +37,7 @@ public class UserValidator implements AbstractValidator {
     }
 
     @Override
-    public void validate(@Nullable Object o, @NonNull Errors errors) {
+    public void validate(@Nullable Object o, Errors errors) {
         UserCreateDto userDto = (UserCreateDto) o;
         if (!roleRepository.findById(userDto.getRoleId()).isPresent()) {
             errors.rejectValue(UserDtoField.ROLE.getName(), HttpStatus.BAD_REQUEST.toString(), replaceTemplate(userValidationMassage, UserDtoField.ROLE.getErrorName()));

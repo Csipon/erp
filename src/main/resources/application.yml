@@ -4,6 +4,11 @@
 spring:
   profiles:
     active: local
+  mvc:
+    view:
+      prefix: /WEB-INF/jsp/
+      suffix: .jsp
+
 
 #  data:
 #    mongodb:
@@ -19,3 +24,5 @@ logging:
     org.springframework.web.servlet.mvc.method.annotation: ERROR
     org.springframework.boot.actuate.endpoint.mvc: ERROR
     com.bobbbaich: DEBUG
+server:
+  port: 8888
