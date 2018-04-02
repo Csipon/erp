@@ -27,7 +27,7 @@ public class ErpApplicationTests {
 	public void contextLoads() {
 
 		Role admin = Role.builder()
-				.role("ROLE_xxADMIN")
+				.role("ROLE_ADMIN")
 				.description("The main person in system")
 				.build();
 		roleRepository.save(admin);
