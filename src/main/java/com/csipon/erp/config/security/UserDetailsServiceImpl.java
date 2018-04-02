@@ -28,6 +28,7 @@ public class UserDetailsServiceImpl implements UserDetailsService {
         } else {
             Role role = user.getRole();
             List<String> userRoles = new ArrayList<>();
+            log.info("User role  : " + role.getRole());
             userRoles.add(role.getRole());
             log.info("User found successfully with login  : " + login);
             return new UserDetailsImpl(user, userRoles);

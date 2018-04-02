@@ -31,7 +31,7 @@ public class UserDetailsImpl extends User implements UserDetails {
 
     @Override
     public String getUsername() {
-        return getLogin();
+        return super.getLogin();
     }
 
     @Override

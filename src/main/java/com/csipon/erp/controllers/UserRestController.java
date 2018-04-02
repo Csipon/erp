@@ -11,6 +11,7 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -27,6 +28,7 @@ public class UserRestController {
     private final ResponseUtil responseUtil;
 
     @PostMapping("/register")
+    @PreAuthorize("hasAnyRole('ADMIN')")
     public ResponseEntity<?> registerUser(UserCreateDto userDto, BindingResult bindingResult){
         userValidator.validate(userDto, bindingResult);
         if (bindingResult.hasErrors()){

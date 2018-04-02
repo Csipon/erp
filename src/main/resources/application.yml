@@ -17,12 +17,10 @@ spring:
 ##---Loggin Properties---
 logging:
   level:
-    org.springframework.web: INFO
-    org.springframework.social: DEBUG
-    org.springframework.security: INFO
-    org.springframework.batch: DEBUG
-    org.springframework.web.servlet.mvc.method.annotation: ERROR
-    org.springframework.boot.actuate.endpoint.mvc: ERROR
-    com.bobbbaich: DEBUG
+    org.springframework.web: trace
+    org.springframework.security: trace
+    org.springframework.web.servlet.mvc.method.annotation: trace
+    org.springframework.boot.actuate.endpoint.mvc: trace
+    com.csipon.erp: debug
 server:
   port: 8888
