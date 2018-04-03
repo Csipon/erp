@@ -9,16 +9,17 @@
     <link rel="stylesheet" type="text/css"
           href="https://cdn.rawgit.com/chingyawhao/materialize-clockpicker/master/dist/css/materialize.clockpicker.css">
 
-    <link href="../static/css/main.css" rel="stylesheet"/>
-    <link href="../static/img/ico.png" rel="icon"/>
+    <link href="/css/main.css" rel="stylesheet"/>
+    <link href="/img/ico.png" rel="icon"/>
+    <link href="/css/table.css" rel="stylesheet" />
 
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
-    <meta name="_csrf" content="${_csrf.token}"/>
-    <meta name="_csrf_header" content="${_csrf.headerName}"/>
+    <!--<meta th:name="_csrf" th:content="${_csrf.token}"/>-->
+    <!--<meta th:name="_csrf_header" th:content="${_csrf.headerName}"/>-->
 
-    <title>NC-CRM</title>
+    <title>Invest</title>
 </head>
 <body>
 <header>
@@ -36,18 +37,18 @@
                 <li class="hide-on-med-and-up">
                     <a href="." class="a-logout a-dummy menu-left-item">
                         <i class="black-text material-icons">settings_power</i>
-                        <form action="/logout" method="post">
+                        <form th:action="@{/logout}" method="post">
                             <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}"/>
                         </form>
                     </a>
                 </li>
-                <li class="menu-item-user hide-on-small-only" data-user-role="${user.userRole}">
+                <li class="menu-item-user hide-on-small-only" data-user-role="">
                     <div>
                         <a class='dropdown-button a-dummy' href='.' data-activates='dropdown-user'>
-                            <img id="profile-avatar" src="${avatar}"
+                            <img id="profile-avatar" src=""
                                  alt="" class="circle responsive-img z-depth-1">
                             <div>
-                                <span class="black-text title" id="user-name">${user.lastName} ${user.firstName}</span>
+                                <span class="black-text title" id="user-name" th:text="${#request.getUserPrincipal().getName()}">name</span>
                             </div>
                         </a>
                         <ul id='dropdown-user' class='dropdown-content'>
@@ -57,8 +58,8 @@
                                 <a href="." class="a-logout a-dummy">
                                     <i class="small material-icons">settings_power</i>
                                     Log Out
-                                    <form action="/logout" method="post">
-                                        <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
+                                    <form th:action="@{/logout}" method="post">
+                                        <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}"/>
                                     </form>
                                 </a>
                             </li>
@@ -78,13 +79,13 @@
         <li>
             <a href="#" class="logo valign-wrapper menu-element">
                 <i class="white-text material-icons">home</i>
-                <h1>UPG Invest</h1>
+                <h2>UPG Invest</h2>
             </a>
         </li>
         <li class="li-divider">
             <div class="divider"></div>
         </li>
-        <div w3-include-html="component/menu.html"></div>
+        <div th:insert="component/menu.html"></div>
     </ul>
 </div>
 
@@ -96,7 +97,8 @@
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/js/materialize.min.js"></script>
 <script src="https://cdn.rawgit.com/chingyawhao/materialize-clockpicker/master/dist/js/materialize.clockpicker.js"></script>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/chartist/0.11.0/chartist.min.js"></script>
-<script src="../static/js/main.js"></script>
-</div>
+<script src="/js/main.js"></script>
+<!--<script type="text/javascript" src="/js/table.js"></script>-->
+
 </body>
 </html>

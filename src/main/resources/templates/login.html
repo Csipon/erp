@@ -48,11 +48,11 @@
 
             <div class='input-field'>
                 <input class='validate' type='email' name='email' id="email1"/>
-                <label for='email1'>Enter your email</label>
+                <label for='email1' th:autofocus="true">Enter your email</label>
             </div>
             <div class='input-field'>
                 <input class='validate' type='tel' name='phone' id="phone"/>
-                <label for='phone'>Enter your phone</label>
+                <label for='phone' th:autofocus="true">Enter your phone</label>
             </div>
 
             <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}"/>

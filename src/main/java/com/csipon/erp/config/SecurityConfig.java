@@ -57,7 +57,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .httpBasic()
                 .and()
                 .formLogin()
-                .loginPage("/login")
+                .loginPage("/login").permitAll()
                 .failureUrl("/login?error")
                 .usernameParameter("login").passwordParameter("password")
                 .successHandler(successHandler)
@@ -69,7 +69,6 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .and()
                 .rememberMe().tokenRepository(tokenRepository)
                 .tokenValiditySeconds(1209600);
-//        http.csrf().disable();
     }
 
     @Bean

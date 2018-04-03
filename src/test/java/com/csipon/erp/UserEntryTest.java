@@ -48,7 +48,13 @@ public class UserEntryTest {
         workWeek.put(Week.FRIDAY, 8);
         workWeek.put(Week.SATURDAY, 0);
         User pasha = userRepository.findUserByLogin("pasha");
-        UserEntry entry = UserEntry.builder().from(LocalDate.now().plusDays(7)).to(LocalDate.now().plusDays(14)).lastDateeModified(LocalDateTime.now()).user(pasha).workWeek(workWeek).build();
+        UserEntry entry = UserEntry.builder()
+                .from(LocalDate.now())
+                .to(LocalDate.now().plusDays(7))
+                .lastDateeModified(LocalDateTime.now())
+                .user(pasha)
+                .workWeek(workWeek)
+                .build();
 
         UserEntry userEntry = userEntryService.createEntry(entry);
         System.out.println(userEntry);

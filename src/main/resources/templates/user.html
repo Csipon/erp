@@ -1,0 +1,100 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<style xmlns:th="http://www.w3.org/1999/xhtml">
+
+    .content-body {
+        position: relative;
+    }
+
+    .container {
+        padding-top: 100px;
+        padding-bottom: 100px;
+    }
+
+    .container selector {
+        position: relative;
+    }
+
+    h4, h5, h6 {
+        text-align: center;
+        word-wrap: break-word;
+    }
+
+    .change-trigger {
+        position: absolute;
+        margin: 20px;
+    }
+
+    .modal.modal-fixed-footer {
+        max-height: 85%;
+        height: 98%;
+    }
+
+    .row .map-wrapper.col {
+        float: none;
+        margin: 30px auto;
+        clear: both;
+    }
+
+    .a-settings {
+        position: absolute;
+        margin: 20px;
+        right: 0;
+    }
+
+    .modal .modal-footer .btn {
+        float: none;
+    }
+
+    .modal-content h4 {
+        margin-top: 20px;
+    }
+
+    .avatar {
+        /*display: none;*/
+        border-radius: 50%;
+        width: 150px;
+    }
+
+</style>
+<div class="content-body z-depth-1" data-page-name="User #${user.id}">
+    <a class="teal-text text-darken-3 a-settings" href="#settings"><i class='material-icons medium'>settings</i></a>
+    <div class="container row">
+        <div class="col s6 m3"><img id="user-avatar" class="avatar" src="" style="width: 100%;"/></div>
+        <div class="col s12 m9">
+            <h4 class="name field" th:text="${user.firstName + ' ' + user.lastName}">name</h4>
+            <div class="divider"></div>
+            <div class="section">
+                <div class="div-work field">
+                    <h5 class="price">${user.organization.name} (${user.userRole.formattedName})</h5>
+                </div>
+                <div class="div-phone field">
+                    <h5 class="price">Phone: ${user.phone}</h5>
+                </div>
+                <div class="div-email field">
+                    <h5 class="price">Email: ${user.email}</h5>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    $('.modal').modal({
+            opacity: .5, // Opacity of modal background
+            endingTop: '8%' // Starting top style attribute
+        }
+    );
+
+    $('.materialize-textarea').trigger('autoresize');
+    Materialize.updateTextFields();
+
+    $("#update-user-form").on("submit", function (e) {
+        e.preventDefault();
+        $("input[name='accountNonLocked']").val($("input[name='enable']").is(":checked"))
+        send("#update-user-form", "/users", 'PUT').done(function () {
+            $('.modal').modal('close');
+            $(window).trigger('hashchange')
+        })
+    });
+
+</script>
+</html>

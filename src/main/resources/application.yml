@@ -4,10 +4,10 @@
 spring:
   profiles:
     active: local
-  mvc:
-    view:
-      prefix: /WEB-INF/jsp/
-      suffix: .jsp
+#  mvc:
+#    view:
+#      prefix: /WEB-INF/jsp/
+#      suffix: .jsp
 
 
 #  data:
@@ -17,10 +17,10 @@ spring:
 ##---Loggin Properties---
 logging:
   level:
-    org.springframework.web: trace
-    org.springframework.security: trace
-    org.springframework.web.servlet.mvc.method.annotation: trace
-    org.springframework.boot.actuate.endpoint.mvc: trace
+    org.springframework.web: debug
+    org.springframework.security: debug
+    org.springframework.web.servlet.mvc.method.annotation: debug
+    org.springframework.boot.actuate.endpoint.mvc: debug
     com.csipon.erp: debug
 server:
   port: 8888

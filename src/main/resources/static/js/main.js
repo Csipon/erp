@@ -41,32 +41,12 @@ $(document).ready(function () {
     });
 });
 
-
-function checkNewMessage() {
-    var messageItem = $(".message-menu-item");
-    if (messageItem.data("new-message") != 0) {
-        messageItem.addClass("new-message");
-        messageItem.children().removeClass("black-text");
-        messageItem.children().addClass("red-text");
-    }
-}
-
-function countMessage() {
-    $.get("/messages/count").success(function (data) {
-        var count = data;
-        if (count > 0) {
-            $(".message-menu-item").attr("data-new-message", count);
-            checkNewMessage();
-        }
-    });
-}
-
 function downloadContent() {
     var $contentBody = $(".content-body-wrapper");
     $contentBody.removeClass("content-body-visible");
     $(".progress").addClass("progress-active");
     $.get({
-        url: "/" + $(".menu-item-user").data("user-role") + "/" + location.hash.substr(1),
+        url: "/" + location.hash.substr(1),
         dataType: "html"
     }).success(function (data) {
         changeContent(data)

@@ -12,6 +12,8 @@ public interface UserService {
 
     User getUserByLogin(String login);
 
+    User getUserById(String id);
+
     List<User> getUsersByRoleId(String roleId);
 
     List<User> getUsersByFirstName(String firstName);
