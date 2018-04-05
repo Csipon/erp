@@ -2,10 +2,12 @@ package com.csipon.erp.models;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 
 @Getter
 @AllArgsConstructor
-public enum Week{
+@NoArgsConstructor
+public enum Week {
     SUNDAY(6),
     MONDAY(0),
     TUESDAY(1),

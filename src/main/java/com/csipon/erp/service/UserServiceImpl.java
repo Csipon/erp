@@ -21,14 +21,14 @@ public class UserServiceImpl implements UserService {
     private final PasswordEncoder passwordEncoder;
 
     @Override
-    public User createUser(UserCreateDto userCreateDto) {
+    public User create(UserCreateDto userCreateDto) {
         log.debug("Create user with login = {}", userCreateDto.getLogin());
         userCreateDto.setPassword(passwordEncoder.encode(userCreateDto.getPassword()));
-        return userRepository.save(userMapper.mapToUser(userCreateDto));
+        return userRepository.save(userMapper.mapTo(userCreateDto));
     }
 
     @Override
-    public User updateUser(User user) {
+    public User update(User user) {
         return userRepository.save(user);
     }
 

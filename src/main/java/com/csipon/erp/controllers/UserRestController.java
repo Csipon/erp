@@ -35,7 +35,7 @@ public class UserRestController {
             log.debug("Validation error during register user", bindingResult.getAllErrors().stream().findFirst().get().toString());
             return bindingResultHandler.handle(bindingResult);
         }
-        User user = userService.createUser(userDto);
+        User user = userService.create(userDto);
         return responseUtil.getHttpResponse(MessageHeader.SUCCESS_MESSAGE, user.getLogin(), HttpStatus.OK);
     }
 

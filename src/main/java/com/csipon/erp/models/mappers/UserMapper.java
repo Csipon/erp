@@ -12,7 +12,7 @@ import org.springframework.stereotype.Component;
 public class UserMapper {
     private final RoleRepository roleRepository;
 
-    public User mapToUser(UserCreateDto userDto){
+    public User mapTo(UserCreateDto userDto){
         return User.builder()
                 .firstName(userDto.getFirstName())
                 .middleName(userDto.getMiddleName())

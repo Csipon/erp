@@ -10,7 +10,6 @@ import java.util.Collection;
 import java.util.List;
 
 public class UserDetailsImpl extends User implements UserDetails {
-
     private List<String> userRoles;
 
     public UserDetailsImpl(User user, List<String> userRoles) {

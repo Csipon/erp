@@ -6,9 +6,9 @@ import com.csipon.erp.models.dto.UserCreateDto;
 import java.util.List;
 
 public interface UserService {
-    User createUser(UserCreateDto userCreateDto);
+    User create(UserCreateDto userCreateDto);
 
-    User updateUser(User user);
+    User update(User user);
 
     User getUserByLogin(String login);
 
